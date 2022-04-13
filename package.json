@@ -1,0 +1,29 @@
+{
+  "name": "web3-storage-api-client-codegen",
+  "version": "0.0.1",
+  "description": "the API code generation project for web3.storage",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t web3-storage-api-client-codegen .",
+    "gen:base": "docker run -t -v ${PWD}:/app --entrypoint ./scripts/gen.sh web3-storage-api-client-codegen",
+    "gen:py": "npm run gen:base -- python",
+    "gen:ts": "npm run gen:base -- typescript",
+    "gen:php": "npm run gen:base -- php",
+    "gen:c#": "npm run gen:base -- csharp-netcore",
+    "gen:rb": "npm run gen:base -- ruby",
+    "gen:all": "npm run gen:py && npm run gen:ts && npm run gen:php && npm run gen:c# && npm run gen:rb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenks-guo-filecoin/web3-storage-api-client-codegen.git"
+  },
+  "author": "Jenks Guo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenks-guo-filecoin/web3-storage-api-client-codegen/issues"
+  },
+  "homepage": "https://github.com/jenks-guo-filecoin/web3-storage-api-client-codegen#readme",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.13"
+  }
+}
