@@ -1,17 +1,21 @@
 
-# Web3.storaged SDK codegen project
+# Web3.storage polyglot SDK codegen project
 
-Web3.Storage currently only has a js client and go client. This could discourage devs from working with other languages to use web3.storage.
+## Background
+Web3.Storage is a popular free tool for dapp developers to upload and manage files on IPFS & Filecoin. Web3.Storage currently supports a javascript client and a go client. Web3.Storage's openapi specification provided a way for developers to generate their own client in any languages however such a generation could take some effort.
 
-The project aims to create more languages for web3.storage SDKS to generate their own SDKs in [more languages](https://openapi-generator.tech/docs/generators) easily using `openapi-generator-cli` tools.
+## Projec goals
 
-Generate OpenApi client SDKs from Web3.Storage OpenAPI Specification.
+This project aims to create more languages for Web3.Storage SDKS to encourage the usage of the tool in developer communities otherthan JS & Go. The project uses the power of [OpenAPI Generator](https://openapi-generator.tech) and it's commuinity templates to generate SDK clients in [manage languages](https://openapi-generator.tech/docs/generators) with `openapi-generator-cli` tools.
 
-## Quick links to sections
+Developers are encouraged to fork this repositiory and generate languages that is currently missing for Web3.Storage.
 
-- [Adding new language targets](#adding-new-language-targets)
+## Quick links
+
+- [Adding new languages](#adding-new-languages)
 - [Adding custom templates](#adding-custom-templates)
-- [Running locally](#running-locally)
+- [Generate code locally](#generate-code-locally)
+- [Generate via Github Action](generate-via-github-action)
 
 ## Latest generated SDKs
 
@@ -21,10 +25,9 @@ Generate OpenApi client SDKs from Web3.Storage OpenAPI Specification.
 - [Ruby]()
 - [C#]() <= work in progress
 
-## Adding new language targets
+## Adding new languages
 
 We can add support for new language SDKs by following these steps:
-
 - Find the generator name for the language [here](https://openapi-generator.tech/docs/generators)
 - Add a configuration file under `config/{generatorName}.yml` (most or all generators require at least `packageName`)
 - Find available configuration options by viewing the page for the generator [here](https://openapi-generator.tech/docs/generators)
@@ -47,9 +50,9 @@ As an example lets use a custom `python` template:
 - Make any changes to our custom template, we can add new configuration values using `{{configValue}}` and then setting the value in the language configuration file `./config/python.yml` like so `configValue: Hello`
 - Run generation `npm run gen:py`, our template changes will be observable in the produced file: `out/python/README.md`
 
-## Running locally
+## Generate code locally
 
-Install dependencies:
+Before you start, install dependencies:
 - `docker`, make sure your docker daemon is running before generating
 - `nodejs` & `npm`
 
@@ -59,5 +62,9 @@ Now perform the following:
 - `npm run gen:all` to generate all language SDKs OR
 - `npm run gen:py` to generate the python SDK for example
 
+## Generate via github action
+
+[automiation via Github Action (using release tagging) coming soon, including publishing to package centers]
+
 ## Generated SDKs & Documentation
-All generated SDKs can be viewed and tested in /out folder under their respective languages. Test files templates are generated so are the documentation of the SDKs. 
+All generated SDKs can be viewed and tested in `/out` folder under their respective languages. Test files templates are generated so are the documentation of the SDK methods along with demo code snippets. 
