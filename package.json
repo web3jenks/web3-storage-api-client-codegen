@@ -11,7 +11,8 @@
     "gen:php": "npm run gen:base -- php",
     "gen:c#": "npm run gen:base -- csharp-netcore",
     "gen:rb": "npm run gen:base -- ruby",
-    "gen:all": "npm run gen:py && npm run gen:ts && npm run gen:php && npm run gen:c# && npm run gen:rb"
+    "gen:rust": "npm run gen:base -- rust",
+    "gen:all": "npm run gen:c# && npm run gen:php && npm run gen:py && npm run gen:rb && npm run gen:rust"
   },
   "repository": {
     "type": "git",

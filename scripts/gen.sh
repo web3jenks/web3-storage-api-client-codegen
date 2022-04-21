@@ -4,7 +4,8 @@
 
 LANG=$1
 OUT_LOC=${2:-out/$LANG}
-SPEC_LOC="https://raw.githubusercontent.com/web3-storage/docs/95e09d5097f17b9612dd38369e1f36114f353150/static/schema.yml"
+# SPEC_LOC="https://raw.githubusercontent.com/web3-storage/docs/95e09d5097f17b9612dd38369e1f36114f353150/static/schema.yml"
+SPEC_LOC="./spec/schema.yml"
 
 echo "Generating $LANG"
 echo "Using spec: $SPEC_LOC"
